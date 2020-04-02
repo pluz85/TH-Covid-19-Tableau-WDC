@@ -12,16 +12,8 @@ app = Flask(__name__)
 app.register_blueprint(api)
 app.register_blueprint(router)
 
-# configuration
-app_settings = os.getenv(
-    'APP_SETTINGS',
-    'app.config.DevelopmentConfig'
-)
-app.config.from_object(app_settings)
-
-
 # Dev Config
-# app.config.from_object(__name__)
+app.config.from_object(__name__)
 DEBUG = True
 
 # enable CORS
