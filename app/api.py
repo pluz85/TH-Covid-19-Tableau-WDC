@@ -11,17 +11,17 @@ def today():
     return data.download_dict('today')
 
 
-@api.route('/cases', methods=['GET'])
+@api.route('/cases')
 def cases():
     return data.download_list('cases')
 
 
-@api.route('/timeline', methods=['GET'])
+@api.route('/timeline')
 def timeline():
     return data.download_list('timeline')
 
 
-@api.route('/risks', methods=['GET'])
+@api.route('/risks')
 def risks():
     raw = data.download_not_clean('area')
     clean = json.dumps(utility.clean_list(raw))
