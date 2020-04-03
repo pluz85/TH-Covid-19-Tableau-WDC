@@ -1,5 +1,6 @@
 import requests
 import json
+from app import utility
 
 headers = {
     'json': 'true',
@@ -11,21 +12,15 @@ url = 'https://covid19.th-stat.com/api/open/'
 def download_dict(endpoint):
     response = requests.get(url + endpoint, headers=headers)
     if response.status_code == 200:
-        data = response.content
+        data = response.json()
+        utility.clean_dict(data)
         return data
 
 
 def download_list(endpoint):
     response = requests.get(url + endpoint, headers=headers)
     if response.status_code == 200:
-        data_raw = json.loads(response.content)
-        data = data_raw['Data']
+        data = response.json()['Data']
+        utility.clean_list(data)
         return json.dumps(data)
 
-
-def download_not_clean(endpoint):
-    response = requests.get(url + endpoint, headers=headers)
-    if response.status_code == 200:
-        data_raw = json.loads(response.content)
-        data = data_raw['Data']
-        return data

@@ -23,6 +23,4 @@ def timeline():
 
 @api.route('/risks')
 def risks():
-    raw = data.download_not_clean('area')
-    clean = json.dumps(utility.clean_list(raw))
-    return clean
+    return data.download_list('area')

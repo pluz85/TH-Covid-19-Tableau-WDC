@@ -7,10 +7,12 @@ common = r'\"'
 # Cleaning Function
 def clean_dict(d):
     for k, v in d.items():
-        if re.match(html_tag, str(v)):
+        if re.search(html_tag, str(v), 0):
             d[k] = re.sub(html_tag, '', v)
         elif re.search(common, str(v), 0):
             d[k] = re.sub(common, '', v, 0)
+        else:
+            pass
     return d
 
 
