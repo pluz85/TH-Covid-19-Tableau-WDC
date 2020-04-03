@@ -24,10 +24,10 @@ def to_excel(data, endpoint):
 
 
 def download(endpoint):
-    d = datetime.date.today().strftime('%d%m%Y')
+    d = (datetime.date.today() + datetime.timedelta(hours=11)).strftime('%d%m%Y')  # Heroku Server Location Time Diff
     filename = endpoint + '_' + d
     api = get_json_response('api.' + endpoint)
     data = to_excel(api, endpoint)
     return send_file(data,
-                     attachment_filename=filename+'.xlsx',
+                     attachment_filename=filename + '.xlsx',
                      as_attachment=True)
