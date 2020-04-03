@@ -60,9 +60,25 @@
             {id: "GenderEn", alias: "Gender", dataType: tableau.dataTypeEnum.string},
             {id: "Nation", alias: "สัญชาติ", dataType: tableau.dataTypeEnum.string},
             {id: "NationEn", alias: "Nationality", dataType: tableau.dataTypeEnum.string},
-            {id: "Province", alias: "จังหวัด",geoRole: tableau.geographicRoleEnum.state_province, dataType: tableau.dataTypeEnum.string},
-            {id: "ProvinceID", alias: "รหัสจังหวัด", columnRole: tableau.columnRoleEnum.dimension, description: "สามารถนำไปทำ relation กับ Province ID แผนที่ GeoJson ได้", dataType: tableau.dataTypeEnum.string},
-            {id: "ProvinceEn", alias: "Province",geoRole: tableau.geographicRoleEnum.state_province, dataType: tableau.dataTypeEnum.string}
+            {
+                id: "Province",
+                alias: "จังหวัด",
+                geoRole: tableau.geographicRoleEnum.state_province,
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "ProvinceID",
+                alias: "รหัสจังหวัด",
+                columnRole: tableau.columnRoleEnum.dimension,
+                description: "สามารถนำไปทำ relation กับ Province ID แผนที่ GeoJson ได้",
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "ProvinceEn",
+                alias: "Province",
+                geoRole: tableau.geographicRoleEnum.state_province,
+                dataType: tableau.dataTypeEnum.string
+            }
         ];
         const caseTable = {
             id: "TH_COVID_CASE",
@@ -77,8 +93,18 @@
             {id: "Location", alias: "สถานที่", dataType: tableau.dataTypeEnum.string},
             {id: "Recommend", alias: "คำแนะนำ", dataType: tableau.dataTypeEnum.string},
             {id: "AnnounceBy", alias: "ผู้ประกาศ", dataType: tableau.dataTypeEnum.string},
-            {id: "Province", alias: "จังหวัด",geoRole: tableau.geographicRoleEnum.state_province, dataType: tableau.dataTypeEnum.string},
-            {id: "ProvinceEn", alias: "Province",geoRole: tableau.geographicRoleEnum.state_province, dataType: tableau.dataTypeEnum.string},
+            {
+                id: "Province",
+                alias: "จังหวัด",
+                geoRole: tableau.geographicRoleEnum.state_province,
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "ProvinceEn",
+                alias: "Province",
+                geoRole: tableau.geographicRoleEnum.state_province,
+                dataType: tableau.dataTypeEnum.string
+            },
             {id: "Update", alias: "ปรับปรุงข้อมูลล่าสุด", dataType: tableau.dataTypeEnum.datetime}
         ];
         const riskTable = {
@@ -123,12 +149,6 @@
 
     $(document).ready(function () {
         console.log("WDC Ready");
-        // $("#noTableau").addClass('d-none');
-        // $("#Tableau").removeClass('d-none');
-        // $("#submitButton").click(function () {
-        //         tableau.connectionName = "Covid-19 TH Daily";
-        //         tableau.submit();
-        // });
 
     });
 })();

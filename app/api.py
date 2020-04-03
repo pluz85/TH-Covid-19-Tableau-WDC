@@ -1,6 +1,5 @@
 from flask import Blueprint
-from app import data, utility
-import json
+from app import data
 
 api = Blueprint('api', __name__)
 

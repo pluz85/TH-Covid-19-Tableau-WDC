@@ -1,5 +1,6 @@
-from app import export_data
+from app import export_data, status
 from flask import jsonify, render_template, Blueprint
+# import pandas as pd
 
 router = Blueprint('router', __name__)
 
@@ -12,7 +13,8 @@ headers = {
 # sanity check route
 @router.route('/')
 def index():
-    return render_template('index.html')
+    # df = pd.DataFrame.from_dict(status.download_date(), orient='index')
+    return render_template('index.min.html')
 
 
 @router.route('/ping', methods=['GET'])
@@ -37,4 +39,4 @@ def timeline_download():
 
 @router.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    return render_template('404.min.html'), 404
