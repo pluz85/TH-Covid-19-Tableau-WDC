@@ -5,7 +5,7 @@ common = r'\"'
 
 
 # Cleaning Function
-def clean_dict(d):
+def c_dict(d):
     for k, v in d.items():
         if re.search(html_tag, str(v), 0):
             d[k] = re.sub(html_tag, '', v)
@@ -16,8 +16,8 @@ def clean_dict(d):
     return d
 
 
-def clean_list(lst):
+def c_list(lst):
     for i in range(0, len(lst)):
         c = lst[i]
-        clean_dict(c)
+        c_dict(c)
     return lst
