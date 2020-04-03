@@ -1,25 +1,21 @@
 from flask import Blueprint
-from app import data
+from app import data_min as d
 
 api = Blueprint('api', __name__)
 
 
 # api load and clean route
 @api.route('/today')
-def today():
-    return data.download_dict('today')
+def today(): return d.dict('today')
 
 
 @api.route('/cases')
-def cases():
-    return data.download_list('cases')
+def cases(): return d.list('cases')
 
 
 @api.route('/timeline')
-def timeline():
-    return data.download_list('timeline')
+def timeline(): return d.list('timeline')
 
 
 @api.route('/risks')
-def risks():
-    return data.download_list('area')
+def risks(): return d.list('area')

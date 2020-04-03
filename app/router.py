@@ -1,42 +1,32 @@
-from app import export_data, status
-from flask import jsonify, render_template, Blueprint
+from app import export_data_min as e
+from flask import render_template as r, Blueprint
+
 # import pandas as pd
 
 router = Blueprint('router', __name__)
 
-headers = {
-    'json': 'true',
-    'Content-Type': 'application/json; charset=utf-8',
-}
 
-
-# sanity check route
 @router.route('/')
 def index():
     # df = pd.DataFrame.from_dict(status.download_date(), orient='index')
-    return render_template('index.min.html')
-
-
-@router.route('/ping', methods=['GET'])
-def ping_pong():
-    return jsonify('pong!')
+    return r('index.html')
 
 
 @router.route('/download-cases', methods=['GET'])
 def cases_download():
-    return export_data.download('cases')
+    return e.dl('cases')
 
 
 @router.route('/download-risks', methods=['GET'])
 def risks_download():
-    return export_data.download('risks')
+    return e.dl('risks')
 
 
 @router.route('/download-timeline', methods=['GET'])
 def timeline_download():
-    return export_data.download('timeline')
+    return e.dl('timeline')
 
 
 @router.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.min.html'), 404
+    return r('404.html'), 404
