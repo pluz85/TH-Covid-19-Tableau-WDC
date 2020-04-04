@@ -1,7 +1,6 @@
-from app import export_data_min as e, status as s
+from app import export_data as e, status as s
 from flask import render_template as r, Blueprint
 
-# import pandas as pd
 
 router = Blueprint('router', __name__)
 
@@ -14,17 +13,17 @@ def index():
 
 @router.route('/download-cases')
 def cases_download():
-    return e.dl('cases')
+    return e.download('cases')
 
 
 @router.route('/download-area')
 def risks_download():
-    return e.dl('area')
+    return e.download('area')
 
 
 @router.route('/download-timeline')
 def timeline_download():
-    return e.dl('timeline')
+    return e.download('timeline')
 
 
 @router.errorhandler(404)

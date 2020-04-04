@@ -6,17 +6,18 @@ from app import router
 from app.api import api
 from app.router import router
 
-# Initialize application
-app = Flask(__name__)
-app.register_blueprint(api)
-app.register_blueprint(router)
 
-# Dev Config
-app.config.from_object(__name__)
-DEBUG = True
-
-# enable CORS
-CORS(app, resources={r'/*': {'origins': '*'}})
+def create_app():
+    # Initialize application
+    app = Flask(__name__)
+    # enable CORS
+    CORS(app, resources={r'/*': {'origins': '*'}})
+    # Dev Config
+    app.config.from_object(__name__)
+    with app.app_context():
+        app.register_blueprint(api)
+        app.register_blueprint(router)
+    return app
 
 
 

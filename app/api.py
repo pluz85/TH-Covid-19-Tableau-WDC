@@ -1,35 +1,19 @@
 from flask import Blueprint
-from app import data_min as d
+from app import data as d
 
 api = Blueprint('api', __name__)
-endpoints = ['today', 'cases', 'timeline', 'risks']
+endpoints = ['today', 'cases', 'timeline', 'area']
 
 
 @api.route('/<endpoint>')
 def get_endpoint(endpoint):
     if endpoint in endpoints:
         if endpoint == 'today':
-            return d.dict(endpoint)
+            return d.d_dict(endpoint)
         else:
-            return d.list(endpoint)
+            return d.d_list(endpoint)
     else:
         return d.res_err()
-
-# # api load and clean route
-# @api.route('/today')
-# def today(): return d.dict('today')
-#
-#
-# @api.route('/cases')
-# def cases(): return d.list('cases')
-#
-#
-# @api.route('/timeline')
-# def timeline(): return d.list('timeline')
-#
-#
-# @api.route('/area')
-# def risks(): return d.list('area')
 
 
 @api.after_request
