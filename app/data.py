@@ -6,20 +6,17 @@ headers = {'json': 'true', 'Content-Type': 'application/json; charset=utf-8'}
 url = 'https://covid19.th-stat.com/api/open/'
 
 
-def d_dict(endpoint):
+def d_data(endpoint):
     response = requests.get(url + endpoint, headers=headers)
     if response.status_code == 200:
-        data = response.json()
-        utility.c_dict(data)
-        return data
-
-
-def d_list(endpoint):
-    response = requests.get(url + endpoint, headers=headers)
-    if response.status_code == 200:
-        data = response.json()['Data']
-        utility.c_list(data)
-        return json.dumps(data)
+        if endpoint == 'today':
+            data = response.json()
+            utility.c_dict(data)
+            return data
+        else:
+            data = response.json()['Data']
+            utility.c_list(data)
+            return json.dumps(data)
 
 
 def res_err():

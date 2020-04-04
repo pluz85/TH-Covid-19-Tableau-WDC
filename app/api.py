@@ -9,9 +9,9 @@ endpoints = ['today', 'cases', 'timeline', 'area']
 def get_endpoint(endpoint):
     if endpoint in endpoints:
         if endpoint == 'today':
-            return d.d_dict(endpoint)
+            return d.d_data(endpoint)
         else:
-            return d.d_list(endpoint)
+            return d.d_data(endpoint)
     else:
         return d.res_err()
 
