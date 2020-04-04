@@ -6,6 +6,14 @@ from flask import render_template as r, Blueprint
 router = Blueprint('router', __name__)
 
 
+@router.after_request
+def set_response_headers(response):
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '0'
+    return response
+
+
 @router.route('/')
 def index():
     status = s.status_date()
