@@ -5,7 +5,7 @@ api = Blueprint('api', __name__)
 endpoints = ['today', 'cases', 'timeline', 'area']
 
 
-@wdc_api.route('/<endpoint>')
+@api.route('/<endpoint>')
 def get_endpoint(endpoint):
     if endpoint in endpoints:
         if endpoint == 'today':
