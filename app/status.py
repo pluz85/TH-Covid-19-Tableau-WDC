@@ -10,11 +10,11 @@ def status_date():
     statusList = []
     for i in range(0, len(endpoints)):
         response = requests.get(url + endpoints[i], headers=headers)
-        if response.status_code == 200:
-            code = str(response.status_code)
+        code = response.status_code
+        if code == 200:
             try:
                 date = response.json()['UpdateDate']
-                span = 'api ' + source[i] + '  Status Code: ' + code + '   Update At: ' + date
+                span = 'api ' + source[i] + '  Status Code: ' + str(code) + '   Update At: ' + date
                 print(span)
                 statusList.append(span)
             except KeyError:
