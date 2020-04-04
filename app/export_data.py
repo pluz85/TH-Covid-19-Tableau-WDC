@@ -5,9 +5,9 @@ import io
 import datetime
 
 
-def get_json_response(endpoint, *args, **kwargs):
-    view = current_app.view_functions[endpoint]
-    res = view(*args, **kwargs)
+def get_json_response(endpoint, **kwargs):
+    view = current_app.view_functions['api.get_endpoint']
+    res = view(endpoint, **kwargs)
     js = json.loads(res)
     return js
 
