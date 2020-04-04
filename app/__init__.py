@@ -9,6 +9,6 @@ app = Flask(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
 app.config.from_object(__name__)
 with app.app_context():
-    from . import api, router
-    app.register_blueprint(api.api)
-    app.register_blueprint(router.router)
+    from .router import api, router
+    app.register_blueprint(api)
+    app.register_blueprint(router)

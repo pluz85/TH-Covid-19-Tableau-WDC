@@ -1,8 +1,9 @@
-from app import export_data as e, status as s
+from app import export_data as e, status as s, data as d
 from flask import render_template as r, Blueprint
 
-
 router = Blueprint('router', __name__)
+api = Blueprint('api', __name__)
+endpoints = ['today', 'cases', 'timeline', 'area']
 
 
 @router.route('/')
@@ -11,19 +12,20 @@ def index():
     return r('index.html', spanCode=status)
 
 
-@router.route('/download-cases')
-def cases_download():
-    return e.download('cases')
+@api.route('/<endpoint>')
+def get_endpoint(endpoint):
+    if endpoint in endpoints:
+        if endpoint == 'today':
+            return d.d_dict(endpoint)
+        else:
+            return d.d_list(endpoint)
+    else:
+        return d.res_err()
 
 
-@router.route('/download-area')
-def risks_download():
-    return e.download('area')
-
-
-@router.route('/download-timeline')
-def timeline_download():
-    return e.download('timeline')
+@router.route('/download-<endpoint>')
+def download(endpoint):
+    return e.download(endpoint)
 
 
 @router.errorhandler(404)
