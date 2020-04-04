@@ -12,11 +12,16 @@ def status_date():
         response = requests.get(url + endpoints[i], headers=headers)
         code = response.status_code
         if code == 200:
+            s_code = str(code) + ' ✔'
             try:
                 date = response.json()['UpdateDate']
-                span = 'api ' + source[i] + '  Status Code: ' + str(code) + '   Update At: ' + date
-                print(span)
+                span = 'api ' + source[i] + '  Status Code: ' + s_code + '   Update At: ' + date
                 statusList.append(span)
             except KeyError:
-                pass
+                span = 'api ' + source[i] + '  Status Code: ' + s_code + '   Update At: 💥 Missing Information'
+                statusList.append(span)
+        else:
+            s_code = str(code) + ' ❌'
+            span = 'api ' + source[i] + '  Status Code: ' + s_code
+            statusList.append(span)
     return statusList

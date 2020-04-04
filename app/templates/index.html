@@ -4,17 +4,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col justify-content-center">
-                    <div id="termynal" data-termynal>
-                    <span data-ty="input" data-ty-prompt=">>>">from app import status</span>
-                    <span data-ty="progress"></span>
-                    <span data-ty data-ty-prompt=">>>">api_status_check()</span>
-                    <span data-ty></span>
+                    <div id="termynal" data-ty-startDelay="300" data-ty-cursor="▋" data-ty-typeDelay="40" data-ty-lineDelay="1000">
+                    <span data-ty="input" data-ty-prompt="🦠">from app import status</span>
+                    <span data-ty data-ty-prompt="🦠">api_status_check()</span>
                         <span data-ty="progress"></span>
                         {% for v in spanCode %}
-                        <span data-ty>{{ v }}</span>
+                        <span data-ty data-ty-prompt="🔥🔥🔥">{{ v }}</span>
                         {% endfor %}
-                    <span data-ty="progress"></span>
-                    <span data-ty>Stay Safe @ Home...</span>
+                    <span data-ty data-ty-prompt="✨">Stay Safe at Home 🏡</span>
                 </div>
                 </div>
                 <div class="col">
