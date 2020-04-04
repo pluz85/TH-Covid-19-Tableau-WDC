@@ -16,7 +16,7 @@ def get_endpoint(endpoint):
         return d.res_err()
 
 
-@wdc_api.after_request
+@api.after_request
 def set_response_headers(response):
     response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
     response.headers['Pragma'] = 'no-cache'
