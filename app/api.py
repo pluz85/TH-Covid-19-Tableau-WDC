@@ -5,7 +5,7 @@ api = Blueprint('api', __name__)
 endpoints = ['today', 'cases', 'timeline', 'area']
 
 
-@api.route('/<endpoint>')
+@wdc_api.route('/<endpoint>')
 def get_endpoint(endpoint):
     if endpoint in endpoints:
         if endpoint == 'today':
@@ -16,7 +16,7 @@ def get_endpoint(endpoint):
         return d.res_err()
 
 
-@api.after_request
+@wdc_api.after_request
 def set_response_headers(response):
     response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
     response.headers['Pragma'] = 'no-cache'
