@@ -132,7 +132,7 @@
         }
 
         if (table.tableInfo.id === 'TH_COVID_RISK') {
-            $.getJSON('/risks', function(resp) {
+            $.getJSON('/area', function(resp) {
                  table.appendRows(resp);
                 doneCallback();
             });

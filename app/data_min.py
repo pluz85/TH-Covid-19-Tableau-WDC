@@ -8,3 +8,4 @@ def dict(endpoint):
 def list(endpoint):
 	E=A.get(D+endpoint,headers=C)
 	if E.status_code==200:F=E.json()['Data'];U.c_list(F);return json.dumps(F)
+def res_err():return json.dumps({"error": "Not found"})
