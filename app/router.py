@@ -1,4 +1,4 @@
-from app import export_data_min as e
+from app import export_data_min as e, status as s
 from flask import render_template as r, Blueprint
 
 # import pandas as pd
@@ -8,8 +8,8 @@ router = Blueprint('router', __name__)
 
 @router.route('/')
 def index():
-    # df = pd.DataFrame.from_dict(status.download_date(), orient='index')
-    return r('index.html')
+    status = s.status_date()
+    return r('index.html', spanCode=status)
 
 
 @router.route('/download-cases', methods=['GET'])

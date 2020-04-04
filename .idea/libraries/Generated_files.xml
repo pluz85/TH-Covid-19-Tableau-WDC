@@ -2,10 +2,12 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/app/static/termynal.min.js" />
         <item url="file://$PROJECT_DIR$/app/static/wdc.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/static/termynal.min.js" />
       <root url="file://$PROJECT_DIR$/app/static/wdc.min.js" />
     </CLASSES>
     <SOURCES />
