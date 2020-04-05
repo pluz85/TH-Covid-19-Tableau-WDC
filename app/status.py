@@ -1,5 +1,5 @@
 import requests
-
+from .utility import dt_re
 headers = {'json': 'true', 'Content-Type': 'application/json; charset=utf-8'}
 url = 'https://covid19.th-stat.com/api/open/'
 
@@ -15,10 +15,11 @@ def status_date():
             s_code = str(code) + ' ✔'
             try:
                 date = response.json()['UpdateDate']
-                span = 'api ' + source[i] + '  Status Code: ' + s_code + '   Update At: ' + date
+                dt_re(date)
+                span = 'api ' + source[i] + '  Status Code: ' + s_code + '   ข้อมูลเมื่อ: ' + date
                 statusList.append(span)
             except KeyError:
-                span = 'api ' + source[i] + '  Status Code: ' + s_code + '   Update At: 💥 Missing Information'
+                span = 'api ' + source[i] + '  Status Code: ' + s_code + '   ขัดข้อง: 💥 Missing Information'
                 statusList.append(span)
         else:
             s_code = str(code) + ' ❌'
