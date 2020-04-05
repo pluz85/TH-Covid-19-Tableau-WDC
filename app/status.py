@@ -14,8 +14,9 @@ def status_date():
         if code == 200:
             s_code = str(code) + ' ✔'
             try:
-                date = response.json()['UpdateDate']
-                print(dt_re(date))
+                raw_date = response.json()['UpdateDate']
+                date = dt_re(raw_date)
+                print(date)
                 span = 'api ' + source[i] + '  Status Code: ' + s_code + '   ข้อมูลเมื่อ: ' + dt_re(date)
                 statusList.append(span)
             except KeyError:
