@@ -32,11 +32,9 @@ def c_list(lst):
 def dt_re(kw):
     if re.search(datetime_str, kw, 0):
         date = datetime.datetime.strptime(kw, '%d/%m/%Y %H:%M')
-        thai_strftime(date, th_datetime_fmt)
-        return date
+        return thai_strftime(date, th_datetime_fmt)
     elif re.search(date_str, kw, 0):
         date = datetime.datetime.strptime(kw, '%d/%m/%Y')
-        thai_strftime(date, th_date_fmt)
-        return date
+        return thai_strftime(date, th_date_fmt)
     else:
         pass
