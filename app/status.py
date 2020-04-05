@@ -16,6 +16,7 @@ def status_date():
             try:
                 date = response.json()['UpdateDate']
                 dt_re(date)
+                print(date)
                 span = 'api ' + source[i] + '  Status Code: ' + s_code + '   ข้อมูลเมื่อ: ' + date
                 statusList.append(span)
             except KeyError:
