@@ -16,7 +16,7 @@
     max-width: 100%;
     background: var(--color-bg);
     color: var(--color-text);
-    font-size: 12px;
+    font-size: 10px;
     font-family: 'Fira Mono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;
     border-radius: 4px;
     padding: 45px 35px 35px;
