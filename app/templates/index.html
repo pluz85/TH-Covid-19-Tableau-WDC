@@ -3,16 +3,16 @@
     <div class="bg-dark border-secondary highlight-blue">
         <div class="container-fluid">
             <div class="row">
-                <div class="col justify-content-center">
+                <div class="col d-flex justify-content-center">
                     <div id="termynal" data-termynal data-ty-startDelay="300" data-ty-typeDelay="30" data-ty-lineDelay="800">
-                    <span data-ty="input" data-ty-prompt="🦠">from app import status</span>
-                    <span data-ty data-ty-prompt="🦠">api_status_check()</span>
+                        <span data-ty="input" data-ty-prompt="🦠">from app import status</span>
+                        <span data-ty data-ty-prompt="🦠">api_status_check()</span>
                         <span data-ty="progress"></span>
                         {% for v in spanCode %}
-                        <span data-ty data-ty-prompt="🔥🔥🔥">{{ v }}</span>
+                            <span data-ty data-ty-prompt="🔥🔥🔥">{{ v }}</span>
                         {% endfor %}
-                    <span data-ty data-ty-prompt="✨">Stay Safe at Home 🏡</span>
-                </div>
+                        <span data-ty data-ty-prompt="✨">Stay Safe at Home 🏡</span>
+                    </div>
                 </div>
                 <div class="col">
                     <div class="intro">
