@@ -2,8 +2,7 @@
 {% block content %}
     <div class="bg-dark border-secondary highlight-blue">
         <div class="container-fluid">
-            {% block status %}{% endblock %}
-            {% block tableau %}{% endblock %}
+            {% include ['status.html', 'tableau.html'] %}
         </div>
     </div>
 {% endblock %}
