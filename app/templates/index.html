@@ -2,37 +2,8 @@
 {% block content %}
     <div class="bg-dark border-secondary highlight-blue">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <div id="termynal" data-termynal data-ty-startDelay="300" data-ty-typeDelay="30" data-ty-lineDelay="800">
-                        <span data-ty="input" data-ty-prompt="🦠">from app import status</span>
-                        <span data-ty data-ty-prompt="🦠">api_status_check()</span>
-                        <span data-ty="progress"></span>
-                        {% for v in spanCode %}
-                            <span data-ty data-ty-prompt="🔥🔥🔥">{{ v }}</span>
-                        {% endfor %}
-                        <span data-ty data-ty-prompt="✨">Stay Safe at Home 🏡</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="intro">
-                        <h2 class="text-center" style="font-family: Sarabun, sans-serif;">เชื่อมข้อมูลเข้า Tableau</h2>
-                        <p class="text-center" style="font-family: Sarabun, sans-serif;">โดยเชื่อมต่อจาก API ของ&nbsp;<a class="text-monospace text-success" href="https://covid19.th-stat.com/" style="font-family: Sarabun, sans-serif;width: auto;">Covid19 TH-Stat</a></p>
-                    </div>
-                    <div id="noTableau" class="buttons">
-                        <p class="text-center" style="font-family: Sarabun, sans-serif;">เปิดผ่าน Tableau เท่านั้น หรือศึกษาเพิ่มได้ที่&nbsp;<a class="text-monospace text-success" href="https://help.tableau.com/current/pro/desktop/en-us/examples_web_data_connector.htm#connect-to-the-data-source" style="font-family: Sarabun, sans-serif;width: auto;">การใช้ Web Data Connector</a></p>
-                        <p class="text-center" style="font-family: Sarabun, sans-serif;">หรือสามารถ Download ไฟล์ Excel ได้</p>
-                        <div class="btn-group" role="group">
-                            <a href="/download-cases" style="font-family: Sarabun, sans-serif;" class="btn btn-primary border rounded" id="noTableau" type="button">ข้อมูลแต่ละเคส Excel</a>
-                            <a href="/download-area" style="font-family: Sarabun, sans-serif;" class="btn btn-primary border rounded" id="noTableau" type="button">แจ้งเตือนพื้นที่ Excel</a>
-                            <a href="/download-timeline" style="font-family: Sarabun, sans-serif;" class="btn btn-primary border rounded" id="noTableau" type="button">ข้อมูลสรุปตามช่วงเวลา Excel</a>
-                        </div>
-                    </div>
-                    <div id="Tableau" class="buttons d-none">
-                        <button class="btn btn-alert border rounded" id="submitButton" type="button"><img class="img-fluid" src="{{ url_for('static', filename='assets/img/icon.png') }}" width="20" height="20" alt=""> Get TH Covid-19 Data!</button>
-                    </div>
-                </div>
-            </div>
+            {% block status %}{% endblock %}
+            {% block tableau %}{% endblock %}
         </div>
     </div>
 {% endblock %}
