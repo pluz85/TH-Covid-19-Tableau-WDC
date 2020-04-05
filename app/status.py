@@ -15,9 +15,8 @@ def status_date():
             s_code = str(code) + ' ✔'
             try:
                 date = response.json()['UpdateDate']
-                dt_re(date)
-                print(date)
-                span = 'api ' + source[i] + '  Status Code: ' + s_code + '   ข้อมูลเมื่อ: ' + date
+                print(dt_re(date))
+                span = 'api ' + source[i] + '  Status Code: ' + s_code + '   ข้อมูลเมื่อ: ' + dt_re(date)
                 statusList.append(span)
             except KeyError:
                 span = 'api ' + source[i] + '  Status Code: ' + s_code + '   ขัดข้อง: 💥 Missing Information'
