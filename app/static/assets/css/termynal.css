@@ -12,7 +12,7 @@
 }
 
 [data-termynal] {
-    width: 600px;
+    width: 650px;
     max-width: 100%;
     background: var(--color-bg);
     color: var(--color-text);
