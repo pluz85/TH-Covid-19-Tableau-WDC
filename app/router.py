@@ -1,5 +1,6 @@
 from app import export_data as e, status as s, data as d
 from flask import render_template as r, Blueprint
+from flask.views import MethodView
 
 router = Blueprint('router', __name__)
 api = Blueprint('api', __name__)
@@ -11,6 +12,18 @@ def index():
     status = s.status_date()
     return r('index.html', spanCode=status)
 
+
+# Pluggable Views
+# class CovidApi(MethodView):
+#
+#     def dispatch_request(self, endpoint):
+#         if endpoint in endpoints:
+#             if endpoint == 'today':
+#                 return d.d_data(endpoint)
+#             else:
+#                 return d.d_data(endpoint)
+#         else:
+#             return d.res_err()
 
 @api.route('/<endpoint>')
 def get_endpoint(endpoint):

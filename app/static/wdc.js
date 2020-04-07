@@ -69,7 +69,7 @@
             {
                 id: "ProvinceID",
                 alias: "รหัสจังหวัด",
-                columnRole: tableau.columnRoleEnum.dimension,
+                columnRole: tableau.columnRoleEnum.int,
                 description: "สามารถนำไปทำ relation กับ Province ID แผนที่ GeoJson ได้",
                 dataType: tableau.dataTypeEnum.string
             },
@@ -87,7 +87,7 @@
         };
 
         const risk_cols = [
-            {id: "Date", alias: "วันที่", dataType: tableau.dataTypeEnum.datetime},
+            {id: "Date", alias: "วันที่", dataType: tableau.dataTypeEnum.string},
             {id: "Time", alias: "ห้วงเวลา", dataType: tableau.dataTypeEnum.string},
             {id: "Detail", alias: "รายละเอียด", dataType: tableau.dataTypeEnum.string},
             {id: "Location", alias: "สถานที่", dataType: tableau.dataTypeEnum.string},
