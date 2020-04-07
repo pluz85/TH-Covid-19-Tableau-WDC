@@ -69,9 +69,8 @@
             {
                 id: "ProvinceID",
                 alias: "รหัสจังหวัด",
-                columnRole: tableau.columnRoleEnum.int,
                 description: "สามารถนำไปทำ relation กับ Province ID แผนที่ GeoJson ได้",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.int
             },
             {
                 id: "ProvinceEn",
