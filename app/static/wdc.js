@@ -67,10 +67,10 @@
                 dataType: tableau.dataTypeEnum.string
             },
             {
-                id: "ProvinceID",
+                id: "ProvinceId",
                 alias: "รหัสจังหวัด",
                 description: "สามารถนำไปทำ relation กับ Province ID แผนที่ GeoJson ได้",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.int
             },
             {
                 id: "ProvinceEn",
