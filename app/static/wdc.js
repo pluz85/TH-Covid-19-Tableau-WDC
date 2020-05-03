@@ -73,6 +73,11 @@
                 dataType: tableau.dataTypeEnum.int
             },
             {
+                id: "District",
+                alias: "อำเภอ/เขต",
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
                 id: "ProvinceEn",
                 alias: "Province",
                 geoRole: tableau.geographicRoleEnum.state_province,
