@@ -3,7 +3,7 @@ import json
 from app import utility
 
 headers = {'json': 'true', 'Content-Type': 'application/json; charset=utf-8'}
-url = 'https://covid19.th-stat.com/api/open/'
+url = 'https://covid19.th-stat.com/th/api'
 
 
 def d_data(endpoint):
